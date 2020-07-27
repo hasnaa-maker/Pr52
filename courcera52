@@ -1,0 +1,35 @@
+pip install geocoder
+
+import geocoder
+
+url = 'http://cocl.us/Geospatial_data'
+
+df_geo = pd.read_csv(url)
+df_geo.head() 
+
+df_geo.dtypes
+
+df.dtypes
+
+df.shape
+
+df_geo.shape
+
+df = df.join(df_geo.set_index('Postal Code'), on='Postal Code')
+df
+
+df = df.reset_index()
+
+df.drop(['index'], axis = 'columns', inplace = True) 
+
+df = df.set_index('level_0')
+
+df.head()
+
+df = df.rename(index = {'level_0' : 'index'}) 
+
+df.index.name = 'index'
+
+df.head()
+
+df.shape
